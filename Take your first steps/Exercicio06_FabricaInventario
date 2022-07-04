@@ -1,0 +1,12 @@
+# Imagine que você trabalha para uma fábrica e precisa fazer um inventário do depósito
+# para determinar o número atual de produtos finais que estão prontos para o envio.
+# Além do número total de produtos finais, você também pode querer imprimir uma contagem
+# e o total atual de cada compartimento individual do depósito em que os produtos finais
+# são armazenados. Imprimir esse total atual criaria uma trilha de auditoria para verificar
+# novamente o trabalho e identificar reduções.
+
+string[] names = { "Bob", "Conrad", "Grant" };
+foreach (string name in names)
+{
+    Console.WriteLine(name);
+}
