@@ -193,3 +193,35 @@ else
 string pangram = "The quick brown fox jumps over the lazy dog.";
 Console.WriteLine(pangram.Contains("fox"));
 Console.WriteLine(pangram.Contains("cow"));
+
+// instrução do-/while
+// A instrução do executa uma instrução ou um bloco de instruções, enquanto uma expressão booliana avalia para true. 
+// Já que a expressão é avaliada após cada execução do loop, um loop do-while executa uma ou mais vezes.
+do
+{
+    // This code executes at least one time
+} while (true)
+// O código é executado pelo menos uma vez e, em seguida, a expressão booliana ao lado da palavra-chave while é avaliada.
+// Se a expressão booliana retornar true, o bloco de código será executado novamente.
+
+Random random = new Random();
+int current = random.Next(1, 11);
+
+/*
+do
+{
+    current = random.Next(1, 11);
+    Console.WriteLine(current);
+} while (current != 7);
+*/
+
+while (current >= 3)
+{
+    Console.WriteLine(current);
+    current = random.Next(1, 11);
+}
+Console.WriteLine($"Last number: {current}");
+
+// Nesse caso, posicionamos a palavra-chave while e a expressão booliana antes do bloco de código.
+// Isso altera o significado do código e atua como um "portão", a fim de permitir que o fluxo de
+// execução entre somente se a expressão booliana for avaliada como true.
