@@ -177,3 +177,51 @@ Console.WriteLine($"Measurement: {measurement:N} units");
 // Formatar percentuais
 decimal tax = .36785m;
 Console.WriteLine($"Tax rate: {tax:P2}");
+
+// métodos auxiliares IndexOf() e Substring() da cadeia de caracteres
+string message = "Find what is (inside the parentheses)";
+
+int openingPosition = message.IndexOf('(');
+int closingPosition = message.IndexOf(')');
+
+openingPosition += 1;
+
+int length = closingPosition - openingPosition;
+Console.WriteLine(message.Substring(openingPosition, length));
+
+// O motivo pelo qual estamos usando o valor 1 é porque esse é o comprimento do
+// caractere. Se estivéssemos tentando localizar um valor iniciado após uma
+// cadeia de caracteres mais longa, por exemplo, <div> ou ---, usaríamos o
+// comprimento dessa cadeia de caracteres em vez disso.
+string message = "What is the value <span>between the tags</span>?";
+
+int openingPosition = message.IndexOf("<span>");
+int closingPosition = message.IndexOf("</span>");
+
+openingPosition += 6;
+int length = closingPosition - openingPosition;
+Console.WriteLine(message.Substring(openingPosition, length));
+
+// O trecho de código a seguir mostra como localizar o valor dentro de uma marca
+// de abertura e fechamento <span>.
+string message = "What is the value <span>between the tags</span>?";
+
+const string openSpan = "<span>";
+const string closeSpan = "</span>";
+
+int openingPosition = message.IndexOf(openSpan);
+int closingPosition = message.IndexOf(closeSpan);
+
+openingPosition += openSpan.Length;
+int length = closingPosition - openingPosition;
+Console.WriteLine(message.Substring(openingPosition, length));
+
+// Use the Remove() and Replace() methods
+string data = "12345John Smith          5000  3  ";
+string updatedData = data.Remove(5, 20);
+Console.WriteLine(updatedData);
+
+string message = "This--is--ex-amp-le--da-ta";
+message = message.Replace("--", " ");
+message = message.Replace("-", "");
+Console.WriteLine(message);
